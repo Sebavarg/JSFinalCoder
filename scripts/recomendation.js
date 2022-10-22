@@ -2,7 +2,7 @@ document.getElementById("recomendations").addEventListener("click", makeRecomend
 
 async function makeRecomendations() {
     const response = await
-    fetch('data.json');
+    fetch('../scripts/data.json');
     const data = await response.json();
     console.log(data);
 
@@ -10,6 +10,6 @@ async function makeRecomendations() {
         const containerRecomendations = document.querySelector("#containerRecomendations");
         const li = document.createElement("li")
         li.innerHTML = ` <h5>${contact.name}</h5>  <p>${contact.phone}  ${contact.mail} </p> `
-        listaDGE.append(li);
+        containerRecomendations.append(li);
     })
 }
