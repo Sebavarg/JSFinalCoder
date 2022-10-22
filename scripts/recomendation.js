@@ -1,8 +1,8 @@
-document.getElementById("recomendations").addEventListener("click", makeRecomendations())
+document.getElementById("recomendations").addEventListener("click", makeRecomendations)
 
 async function makeRecomendations() {
     const response = await
-    fetch('scripts/data.json');
+    fetch('data.json');
     const data = await response.json();
     console.log(data);
 
