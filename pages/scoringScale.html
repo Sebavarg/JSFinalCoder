@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Educativo-Escala de Notas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Escala de Notas</h1>
+        <p>Obtene tu escala de notas solo ingresando un puntaje máximo.</p>
+    </header>
+    <section>
+        <input type="number" id="score" placeholder="Ingrese Total de puntos">
+        <input type="submit" id="btnGetScoringScale" value="Obtener Datos">
+        <div id="containerScoringScale"></div>
+    </section>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../scripts/scoringScale.js"></script>
+</body>
+
+</html>
