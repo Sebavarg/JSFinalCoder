@@ -1,5 +1,6 @@
-document.getElementById("btnGetScoringScale").addEventListener("click", scaleHandler);
+document.querySelector(".btnGetScoringScale").addEventListener("click", scaleHandler);
 
+//toma el puntaje maximo de un examen y genera una escala del uno al diez
 function scaleHandler(e) {
     e.preventDefault();
     let puntajeTotal = document.getElementById("score").value;
@@ -19,12 +20,12 @@ function scaleHandler(e) {
         if (i == 10) {
             notaMax = puntajeTotal;
         }
-        resultado = "La nota " + i + " es desde " + notaMin + " puntos hasta " + notaMax + " puntos ";
+        resultado = "  La nota " + i + " es desde " + notaMin + " puntos hasta " + notaMax + " puntos ";
         listaResultado.push(resultado);
     }
     let containerScoringScale = document.getElementById("containerScoringScale");
     containerScoringScale.innerHTML = `<hr> 
-    <p> ${listaResultado.join("--//--")}</p> `;
+    <p> ${listaResultado.join("<hr>  ")}</p> `;
     swal("Escala Creada!", "A continuación puede ver una lista con la escala de notas del 1 al 10 tomando como base el puntaje ingresado", "success")
 
 }

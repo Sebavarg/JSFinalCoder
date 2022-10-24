@@ -6,20 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Educativo-Escala de Notas</title>
+    <meta name="keywords" content="Docente, calculo de notas, lista de alumnos, profesor, alumno, herramienta, cursos, agregar alumno">
+    <!--Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Bootstrap  Icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+    <!--Header -->
     <header>
-        <h1>Escala de Notas</h1>
-        <p>Obtene tu escala de notas solo ingresando un puntaje máximo.</p>
+        <h1 class="animate__animated animate__backInRight" class="titulo_h1"><i class="bi bi-sort-numeric-down"></i> Escala de Notas</h1>
+        <h2 class="titulo__h2">Obtene tu escala de notas solo ingresando un puntaje máximo.</h2>
     </header>
-    <section>
-        <input type="number" id="score" placeholder="Ingrese Total de puntos">
-        <input type="submit" id="btnGetScoringScale" value="Obtener Datos">
+    <!--Generador de Escala de Notas -->
+    <section class="login">
+        <form>
+            <label for="">Ingrese el puntaje máximo de el examen </label>
+            <input type="number" id="score" placeholder="Puntaje Total">
+            <input id="boton" type="submit" class="btnGetScoringScale" value="Obtener Datos">
+        </form>
         <div id="containerScoringScale"></div>
+        <div id="containerScale">
+            <p id="btn-volver"><a href="course.html">Volver al Curso</a></p>
+        </div>
     </section>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../scripts/scoringScale.js"></script>
 </body>

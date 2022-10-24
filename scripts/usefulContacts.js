@@ -6,9 +6,11 @@ class Contact {
     }
 }
 
+
 let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
 document.getElementById("form-contact").addEventListener("submit", handlerAddContact);
 
+//Recibe los datos ingresados por el usuario en el form y crea el contacto con esos datos
 function handlerAddContact(e) {
     e.preventDefault();
 
@@ -23,12 +25,14 @@ function handlerAddContact(e) {
     e.target.reset();
 }
 
+// Recibe un contacto y lo agrega a uns lista de contactos que se persiste en el localStorage
 function addContact(contact) {
     contacts.push(contact)
     localStorage.setItem("contacts", JSON.stringify(contacts));
     showContacts();
 }
 
+// muestra la lista de contactos guardada en el local storage en una li del HTML
 function showContacts() {
     let contactsList = document.getElementById("contactsList");
     contactsList.innerHTML = "";
@@ -36,14 +40,13 @@ function showContacts() {
     contacts.forEach(({ contactName, contactPhone, contactMail }) => {
         let li = document.createElement("li");
         li.innerHTML = `
-      <hr> 
+      <br> 
       ${contactName} - 
       ${"telefono: "+ contactPhone && contactPhone + " -"}
       ${"email: " + contactMail && contactMail + " - "}`;
 
         const deleteBtn = document.createElement("button");
         deleteBtn.innerText = "Borrar";
-        deleteBtn.classList.add("btn", "btn-danger");
 
         deleteBtn.addEventListener("click", () => {
             deleteContact(contactName);
@@ -54,6 +57,7 @@ function showContacts() {
     });
 }
 
+// Recibe un contacto que se quiere eliminar y lo elimina tras confirmar la acción con el usuario
 function deleteContact(contactName) {
     swal({
             title: "¿Estas Seguro de Eliminar?",
@@ -73,6 +77,5 @@ function deleteContact(contactName) {
                 swal(" Contacto NO eliminado");
             }
         });
+    showContacts();
 }
-
-showContacts();

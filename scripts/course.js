@@ -2,8 +2,9 @@ const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 //Genera una bienvenida personalizada y llama a la funcion que va a usar los Datos recibidos en el Local Storage
 function createWelcome() {
     const header = document.querySelector('.mainCourse');
-    const title = document.createElement('h1');
-    const text = document.createTextNode(`Bienvenido profesor: ${userInfo.userName} al curso: ${userInfo.courseName} `)
+    const title = document.createElement('h2');
+    title.classList.add("bienvenida");
+    const text = document.createTextNode(`Bienvenido usuario: ${userInfo.userName} al curso: ${userInfo.courseName} `)
     title.appendChild(text);
     header.insertBefore(title, header.childNodes[0]);
     userInfoHandler();
@@ -38,7 +39,7 @@ function createCourse() {
       <input type="text" id="studentName" placeholder="Nombre alumno" >
       <input type="text" id="studentLastName" placeholder="Apellido alumno">
       <input type="number" id="studentScore" placeholder="Nota " > 
-      <button type="submit">Agregar estudiante a la lista</button>
+      <button type="submit" id="boton">Agregar estudiante a la lista</button>
     </form>`;
 
     document.getElementById('form-add-student').addEventListener('submit', addStudents);
@@ -100,15 +101,16 @@ function showStudents(students) {
 
     students.forEach(student => {
         let li = document.createElement('li');
-        li.innerHTML = `
-        <hr> Estudiante Nombre: ${student.studentName} - ${student.studentLastName} - Nota:
+        li.innerHTML = `<i class="bi bi-person-square"></i>
+        Estudiante Nombre: ${student.studentName} - ${student.studentLastName} - Nota:
         ${student.studentScore}     `;
         const deleteBtn = deleteBtncreation(student);
         li.appendChild(deleteBtn);
         studentsList.appendChild(li);
     })
 }
-
+//Crea el boton borrar estudiante de forma personalizada, confirmando si esta seguro de borrar estudiante.
+//Devuelve Boton de Borrado
 function deleteBtncreation(student) {
     const deleteBtn = document.createElement('button');
     deleteBtn.innerText = "Borrar Estudiante";
@@ -135,7 +137,8 @@ function deleteBtncreation(student) {
     return deleteBtn;
 }
 
-
+//Recibe estudiante a Borrar, lo elimina del curso a traves de un filter generando un nuevo array sin el estudiante filtrado 
+//Muestra el nuevo Array sin el estudiante eliminado, llamando a la funcion ShowStudents
 function deleteStudent(student) {
     const studentsSavedStorage = JSON.parse(localStorage.getItem(userInfo.courseName));
     const newArray = studentsSavedStorage.filter(item => item.studentName != student.studentName);

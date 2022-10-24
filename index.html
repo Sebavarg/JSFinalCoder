@@ -10,7 +10,9 @@
     <meta name="keywords" content="Docente, calculo de notas, lista de alumnos, profesor, alumno, herramienta">
     <title>Docente Digital - Portal Educativo. </title>
     <link href="media/profesor.svg" rel="icon">
+    <!-- Animate CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,11 +22,12 @@
     <header>
         <h1>Portal Educativo</h1>
         <p>Un universo de herramientas para el Docente.</p>
+        <img src="media/profesor.svg" alt="logo">
     </header>
     <!-- Login Ingreso-->
     <section class="login">
-        <form action="pages/course.html" method="post" id="formLogin">
-            <label for="">Ingresa tus Datos</label>
+        <form class="animate__animated animate__lightSpeedInLeft" action="pages/course.html" method="post" id="formLogin">
+            <label for="">Ingrese un Nombre de Usuario</label>
             <br>
             <input type="text" placeholder="Nombre de Usuario" name="username" id="userName" required>
             <label for="">Ingrese nombre del Curso con el que desea trabajar</label>
@@ -37,7 +40,7 @@
     <!-- Footer-->
     <footer>
         <!-- Abre Copyright -->
-        <div class="text-center text-black-50 ">
+        <div class="text-center text-black-50">
             <a href="https://github.com/Sebavarg"> Copyright © 2022 Vargas Zingaretti Repositorio</a>
         </div>
         <!-- Cierra Copyright -->
