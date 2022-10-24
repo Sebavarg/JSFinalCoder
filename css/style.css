@@ -60,7 +60,9 @@ header p {
     letter-spacing: 1.5px;
 }
 
-.login {
+.login,
+.contacts,
+.showContacts {
     color: var(--colorPrincipal);
     background-color: var(--blanco);
     margin: 0 auto;
@@ -70,7 +72,7 @@ header p {
     height: auto;
 }
 
-.login form {
+.login form .contacts form {
     height: auto;
 }
 
@@ -89,7 +91,8 @@ form select {
     letter-spacing: 1.5;
 }
 
-.login form input {
+.login form input,
+.contacts form input {
     color: black;
     font-size: 14px;
     letter-spacing: 1px;
@@ -106,7 +109,8 @@ form select {
     border-bottom: var(--auxiliar) 1.5 solid;
 }
 
-.login form input:focus::placeholder {
+.login form input:focus::placeholder,
+.contacts form input:focus::placeholder {
     color: transparent;
 }
 
@@ -257,4 +261,104 @@ footer a {
     background-color: var(--auxiliar);
     color: #F6E8EA;
     cursor: pointer;
+}
+
+
+/* abre pagina scoringScale.html*/
+
+#containerScale {
+    display: flex;
+    justify-content: center;
+}
+
+#containerScoringScale {
+    font-size: medium;
+    color: black;
+}
+
+#btn-volver {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.767);
+    font-size: 16px;
+    opacity: 0.7;
+    transition: 0.4s;
+    width: 50%;
+}
+
+#btn-volver a {
+    text-decoration: none;
+    color: black;
+}
+
+#btn-volver:hover {
+    cursor: 2rem;
+    background-color: rgb(81, 255, 0);
+}
+
+
+/* abre pagina usefulContacts.html*/
+
+.boton {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: rgba(5, 116, 5, 0.767);
+    border: none;
+    color: white;
+    padding: 16px 32 px;
+    font-size: 16px;
+    opacity: 0.7;
+    transition: 0.4s;
+    width: auto;
+}
+
+.boton:hover {
+    cursor: 1rem auto;
+    background-color: rgb(81, 255, 0);
+}
+
+.recomendations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recomendations div {
+    margin: 2rem;
+    width: 75%;
+    background-color: #5c7da8e8;
+    padding: 2rem;
+    border-radius: 5pt;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    -o-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.recomendations li {
+    list-style: none;
+    letter-spacing: 1px;
+    padding: 2px 0;
+}
+
+.contacts ul {
+    list-style: none;
+    margin: 0, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    letter-spacing: 1px;
+}
+
+.contacts ul li {
+    border: 1px solid var(--blanco);
+    width: 100%;
+    padding: 2px 0;
+    color: #112535;
 }

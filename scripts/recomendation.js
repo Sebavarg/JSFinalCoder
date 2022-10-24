@@ -9,7 +9,7 @@ async function makeRecomendations() {
     data.forEach((contact) => {
         const containerRecomendations = document.querySelector("#containerRecomendations");
         const li = document.createElement("li")
-        li.innerHTML = ` <h5>${contact.name}</h5>  <p>${contact.phone}  ${contact.mail} </p> `
+        li.innerHTML = ` <p><b>${contact.name}</b> - Teléfono: ${contact.phone} - Email: ${contact.mail} </p> `
         containerRecomendations.append(li);
     })
 }

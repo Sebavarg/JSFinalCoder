@@ -36,14 +36,13 @@ function showContacts() {
     contacts.forEach(({ contactName, contactPhone, contactMail }) => {
         let li = document.createElement("li");
         li.innerHTML = `
-      <hr> 
+      <br> 
       ${contactName} - 
       ${"telefono: "+ contactPhone && contactPhone + " -"}
       ${"email: " + contactMail && contactMail + " - "}`;
 
         const deleteBtn = document.createElement("button");
         deleteBtn.innerText = "Borrar";
-        deleteBtn.classList.add("btn", "btn-danger");
 
         deleteBtn.addEventListener("click", () => {
             deleteContact(contactName);
