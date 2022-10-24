@@ -1,5 +1,7 @@
 document.getElementById("recomendations").addEventListener("click", makeRecomendations)
 
+// Consume una Api Local para ofrecer la informacion almacenada en un Doc .json y recorre la información plasmandola
+// en una lista
 async function makeRecomendations() {
     const response = await
     fetch('../scripts/data.json');

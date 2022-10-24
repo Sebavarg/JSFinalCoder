@@ -1,5 +1,6 @@
 document.querySelector(".btnGetScoringScale").addEventListener("click", scaleHandler);
 
+//toma el puntaje maximo de un examen y genera una escala del uno al diez
 function scaleHandler(e) {
     e.preventDefault();
     let puntajeTotal = document.getElementById("score").value;

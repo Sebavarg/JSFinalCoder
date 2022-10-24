@@ -109,7 +109,8 @@ function showStudents(students) {
         studentsList.appendChild(li);
     })
 }
-
+//Crea el boton borrar estudiante de forma personalizada, confirmando si esta seguro de borrar estudiante.
+//Devuelve Boton de Borrado
 function deleteBtncreation(student) {
     const deleteBtn = document.createElement('button');
     deleteBtn.innerText = "Borrar Estudiante";
@@ -136,7 +137,8 @@ function deleteBtncreation(student) {
     return deleteBtn;
 }
 
-
+//Recibe estudiante a Borrar, lo elimina del curso a traves de un filter generando un nuevo array sin el estudiante filtrado 
+//Muestra el nuevo Array sin el estudiante eliminado, llamando a la funcion ShowStudents
 function deleteStudent(student) {
     const studentsSavedStorage = JSON.parse(localStorage.getItem(userInfo.courseName));
     const newArray = studentsSavedStorage.filter(item => item.studentName != student.studentName);
